@@ -7,10 +7,10 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-        keys: [frontend-deps]
+          keys: [frontend-deps]
       - run:
-        name: Build frontend
-        command: |
+          name: Build frontend
+          command: |
             cd frontend
             npm install
             npm run build
@@ -24,7 +24,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-        keys: [backend-deps]
+          keys: [backend-deps]
       - run:
           name: Build frontend
           command: |
