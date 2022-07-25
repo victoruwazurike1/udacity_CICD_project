@@ -130,7 +130,6 @@ jobs:
           command: |
             cd backend
             npm install
-            npm update
             npm audit fix --force --audit-level=critical
   
   deploy-infrastructure:
@@ -138,7 +137,7 @@ jobs:
       - image: cimg/python:3.10
     steps:
       - checkout
-      - install_awscii
+      - install_awscli
       - run:
           name: Ensure frontend infrastructure exist
           command: |
