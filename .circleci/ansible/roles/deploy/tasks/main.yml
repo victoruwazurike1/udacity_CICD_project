@@ -1,5 +1,5 @@
 ---
-- name: "Creates backend app directory"
+- name: "Creates directory for backend"
   file:
     path: ~/backend
     state: directory
@@ -16,14 +16,11 @@
     cd ~/backend
     tar -xvzf artifact.tar.gz
     npm install -f
-
 - name: "Executing Node app with PM2"
   shell: |
     cd ~/backend
     pm2 start npm -- start -f
     pm2 list
-
-
   register: execute_node
 
 - name: print message
