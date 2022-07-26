@@ -380,8 +380,8 @@ jobs:
       - image: cimg/base:stable
     steps:
       - checkout
-      - awscli
-      - nodejs
+      - install_awscli
+      - install_nodejs
       - run:
           name: Save Old Workflow ID to a text file
           command: |
